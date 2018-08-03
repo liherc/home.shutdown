@@ -1,18 +1,20 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven { url 'https://repo.spring.io/plugins-snapshot' }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.7.BUILD-SNAPSHOT'
     }
 }
 
 plugins{
     id "java"
-
     id "idea"
     id "org.springframework.boot" version "2.0.4.RELEASE"
     id "io.spring.dependency-management" version "1.0.6.RELEASE"
+
 }
 
 wrapper{
@@ -28,12 +30,15 @@ bootJar {
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.spring.io/plugins-snapshot' }
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'org.springframework.boot', name : 'spring-boot-gradle-plugin', version:'2.0.3.RELEASE'
+    compile ("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs', version: '1.0'
+    compile 'org.springframework:spring-core'
+//    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.25.1'
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
