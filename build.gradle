@@ -38,6 +38,8 @@ dependencies {
     compile ("org.springframework.boot:spring-boot-starter-web")
     compile group: 'javax.ws.rs', name: 'javax.ws.rs', version: '1.0'
     compile 'org.springframework:spring-core'
+    compile 'io.springfox:springfox-swagger2:2.9.2'
+    compile 'io.springfox:springfox-swagger-ui:2.9.2'
 //    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.25.1'
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
